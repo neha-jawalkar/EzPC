@@ -30,10 +30,13 @@ __global__ void rotEmbKernel(MHAParams pMHA, int scale, u64 N, T *X, T *Y)
         temp = temp % (pMHA.n_seq * pMHA.dim_W);
         int i = temp / pMHA.dim_W;
         int j = temp % pMHA.dim_W;
-        float sinx, cosx;
+        //float sinx, cosx;
         auto k = j - (j >= dim_W_half) * dim_W_half;
-        __sincosf(i / __powf(10000, (2 * k / (float)pMHA.dim_W)), &sinx, &cosx);
-        const auto uLim = T(1ULL << (scale - 3));
+//      __sincosf(i / __powf(10000, (2 * k / (float)pMHA.dim_W)), &sinx, &cosx);
+	auto scalar = i * std::pow(10000, (2 * k) / (float)pMHA.dim_W);
+	auto sinx = std::sin(scalar);
+	auto cosx = std::cos(scalar);
+	const auto uLim = T(1ULL << (scale - 3));
         T sinxi = T(sinx * uLim);
         T cosxi = T(cosx * uLim);
         if (sinxi == uLim)
