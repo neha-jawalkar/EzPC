@@ -2047,12 +2047,12 @@ void LUT_ss(int size, int bin, int bout, const std::vector<GroupElement> &tab, G
 
 void LUT_dpf(int size, int bin, int bout, const std::vector<GroupElement> &tab, GroupElement *x, GroupElement *y, std::string prefix, bool doReconstruct)
 {
-    if (bin >= 8)
-    {
-        return LUT_dfpet(size, bin, bout, tab, x, y, prefix, doReconstruct);
-    }
+    // if (bin >= 8)
+    // {
+    //     return LUT_dfpet(size, bin, bout, tab, x, y, prefix, doReconstruct);
+    // }
 
-    always_assert(false);
+    // always_assert(false);
 
     if (bin == 8)
     {
