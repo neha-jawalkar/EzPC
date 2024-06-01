@@ -150,7 +150,7 @@ public:
             always_assert(i->graphNode != nullptr);
         }
         activation.graphGenMode = false;
-        if (activation.size() == 0)
+        // if (activation.size() == 0)
             resize(getShapes(a));
         // node->currTensor = &activation;
         activation.graphNode = node;
