@@ -366,7 +366,7 @@ public:
             }
             i++;
         }
-        printf("wIdx=%lu, numParameters=%lu\n", wIdx, numParameters);
+        // printf("wIdx=%lu, numParameters=%lu\n", wIdx, numParameters);
         // always_assert(wIdx == numParameters);
         delete[] floatWeights;
     }

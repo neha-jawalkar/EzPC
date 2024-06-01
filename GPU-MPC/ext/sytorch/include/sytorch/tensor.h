@@ -397,8 +397,8 @@ public:
     void load(const std::string filename, u64 scale)
     {
         size_t size_in_bytes = std::filesystem::file_size(filename);
-        std::cout << size() << std::endl;
-        std::cout << size_in_bytes << std::endl;
+        // std::cout << size() << std::endl;
+        // std::cout << size_in_bytes << std::endl;
         // always_assert(size_in_bytes >= size() * 4);
         size_t wSize = std::min(size(), size_in_bytes / 4);
         float *floatInput = new float[/*size()*/ wSize];

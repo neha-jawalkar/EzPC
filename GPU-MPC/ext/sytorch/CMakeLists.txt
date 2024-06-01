@@ -419,3 +419,10 @@ add_executable(
 )
 
 target_link_libraries(benchmark-llama-13b ${PROJECT_NAME})
+
+add_executable(
+    accuracy-lambada-gpt2
+    accuracy/lambada/gpt2/main.cpp
+)
+
+target_link_libraries(accuracy-lambada-gpt2 ${PROJECT_NAME})
