@@ -291,7 +291,7 @@ int test_gpt2NextWordLogits_ct() {
     gpt2.init(scale);
     auto *ct = new ClearText<i64>();
     ct->bw = 51;
-    gpt.setBackend(ct);
+    gpt2.setBackend(ct);
     gpt2.load("/mnt/nvme/kanav/sigma-accuracy/lambada/gptneo/weights.dat");
 
     auto t1 = std::chrono::high_resolution_clock::now();
