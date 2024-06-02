@@ -20,7 +20,6 @@
 # SOFTWARE.
 
 import sys
-import numpy as np
 
 ground_truth = open(sys.argv[1]).readlines()
 ground_truth = [int(x.strip()) for x in ground_truth]
@@ -29,10 +28,10 @@ predictions = open(sys.argv[2]).readlines()
 predictions = [int(x.strip()) for x in predictions]
 
 corr = 0
-for i in range(len(ground_truth)):
+for i in range(len(predictions)):
     pred = predictions[i]
     if pred == ground_truth[i]:
         corr += 1
 
-print('Accuracy: %.2f%%' % (100.0 * corr / len(ground_truth)))
-print(corr, len(ground_truth))
+print('Accuracy: %.2f%%' % (100.0 * corr / len(predictions)))
+print(corr, len(predictions))
