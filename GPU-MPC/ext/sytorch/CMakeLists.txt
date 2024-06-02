@@ -426,3 +426,10 @@ add_executable(
 )
 
 target_link_libraries(accuracy-lambada-gpt2 ${PROJECT_NAME})
+
+add_executable(
+    accuracy-lambada-gptneo
+    accuracy/lambada/gptneo/main.cpp
+)
+
+target_link_libraries(accuracy-lambada-gptneo ${PROJECT_NAME})
