@@ -296,7 +296,7 @@ int test_gpt2NextWordLogits_ct() {
 
     auto t1 = std::chrono::high_resolution_clock::now();
 
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < 5153; ++i) {
         std::string fname = std::string("/mnt/nvme/kanav/sigma-accuracy/lambada/gptneo/dataset/") + std::to_string(i) + ".dat";
 
         u64 n_seq = get_n_seq(fname, n_embd);
