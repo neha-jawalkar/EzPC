@@ -433,3 +433,19 @@ add_executable(
 )
 
 target_link_libraries(accuracy-lambada-gptneo ${PROJECT_NAME})
+
+
+add_executable(
+    accuracy-lambada-llama7b
+    accuracy/lambada/llama7b/main.cpp
+)
+
+target_link_libraries(accuracy-lambada-llama7b ${PROJECT_NAME})
+
+
+add_executable(
+    accuracy-lambada-llama13b
+    accuracy/lambada/llama13b/main.cpp
+)
+
+target_link_libraries(accuracy-lambada-llama13b ${PROJECT_NAME})
