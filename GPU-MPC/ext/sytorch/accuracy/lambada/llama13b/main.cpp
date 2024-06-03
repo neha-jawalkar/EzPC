@@ -171,8 +171,7 @@ public:
             auto &x_out = block->forward(*x);
             x = &x_out;
         }
-        return *x;
-        // return ln_f->forward(*x);
+        return ln_f->forward(*x);
     }
 };
 
@@ -195,9 +194,8 @@ public:
     Tensor<T> &_forward(Tensor<T> &input)
     {
         auto &fc_in = llama_model->forward(input);
-        return fc_in;
-        // auto &fc_out = fc->forward(fc_in);
-        // return view(fc_out, -1);
+        auto &fc_out = fc->forward(fc_in);
+        return view(fc_out, -1);
     }
 };
 
