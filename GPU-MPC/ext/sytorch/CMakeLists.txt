@@ -463,3 +463,10 @@ add_executable(
 )
 
 target_link_libraries(accuracy-mrpc-tiny ${PROJECT_NAME})
+
+add_executable(
+    accuracy-qnli-tiny
+    accuracy/qnli/tiny/main.cpp
+)
+
+target_link_libraries(accuracy-qnli-tiny ${PROJECT_NAME})
