@@ -449,3 +449,10 @@ add_executable(
 )
 
 target_link_libraries(accuracy-lambada-llama13b ${PROJECT_NAME})
+
+add_executable(
+    accuracy-sst2-tiny
+    accuracy/sst2/tiny/main.cpp
+)
+
+target_link_libraries(accuracy-sst2-tiny ${PROJECT_NAME})
