@@ -171,8 +171,7 @@ public:
             auto &x_out = block->forward(*x);
             x = &x_out;
         }
-        return *x;
-        // return ln_f->forward(*x);
+        return ln_f->forward(*x);
     }
 };
 
@@ -195,9 +194,8 @@ public:
     Tensor<T> &_forward(Tensor<T> &input)
     {
         auto &fc_in = llama_model->forward(input);
-        return fc_in;
-        // auto &fc_out = fc->forward(fc_in);
-        // return view(fc_out, -1);
+        auto &fc_out = fc->forward(fc_in);
+        return view(fc_out, -1);
     }
 };
 
@@ -219,15 +217,6 @@ int test_llamaNextWordLogits_ct(int __argc, char**__argv) {
     const u64 n_layer = 32;
     const u64 intermediate_size = 11008;
     const u64 scale = 12;
-
-
-    // const u64 n_vocab = 32000;
-    // const u64 n_ctx = 4096;
-    // const u64 n_embd = 5120;
-    // const u64 n_head = 40;
-    // const u64 n_layer = 40;
-    // const u64 intermediate_size = 13824;
-    // const u64 scale = 12;
 
     std::string weights_and_dataset_pth = __argv[1];
 
