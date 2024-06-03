@@ -456,3 +456,10 @@ add_executable(
 )
 
 target_link_libraries(accuracy-sst2-tiny ${PROJECT_NAME})
+
+add_executable(
+    accuracy-mrpc-tiny
+    accuracy/mrpc/tiny/main.cpp
+)
+
+target_link_libraries(accuracy-mrpc-tiny ${PROJECT_NAME})
