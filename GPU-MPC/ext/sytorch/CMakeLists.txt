@@ -472,6 +472,13 @@ add_executable(
 target_link_libraries(accuracy-qnli-tiny ${PROJECT_NAME})
 
 add_executable(
+    accuracy-sst2-large
+    accuracy/sst2/large/main.cpp
+)
+
+target_link_libraries(accuracy-sst2-large ${PROJECT_NAME})
+
+add_executable(
     accuracy-qnli-large
     accuracy/qnli/large/main.cpp
 )
