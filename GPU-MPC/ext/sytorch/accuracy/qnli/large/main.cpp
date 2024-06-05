@@ -260,11 +260,11 @@ int validation(int __argc, char**__argv) {
     ct->bw = bw;
     bert.setBackend(ct);
     hasInit = true;
-    bert.load(weights_and_dataset_pth + "/qnli/tiny/weights.dat");
+    bert.load(weights_and_dataset_pth + "/qnli/large/weights.dat");
 
     auto t1 = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < 5463; ++i) {
-        std::string fname = std::string(weights_and_dataset_pth + "/qnli/tiny/dataset/") + std::to_string(i) + ".dat";
+        std::string fname = std::string(weights_and_dataset_pth + "/qnli/large/dataset/") + std::to_string(i) + ".dat";
         u64 n_seq = get_n_seq(fname, n_embd);
         // std::cout << n_seq << std::endl;
         Tensor<T> input({n_seq, n_embd});
