@@ -505,3 +505,10 @@ add_executable(
 )
 
 target_link_libraries(accuracy-mrpc-base ${PROJECT_NAME})
+
+add_executable(
+    accuracy-sst2-base
+    accuracy/sst2/base/main.cpp
+)
+
+target_link_libraries(accuracy-sst2-base ${PROJECT_NAME})
