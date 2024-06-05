@@ -470,3 +470,10 @@ add_executable(
 )
 
 target_link_libraries(accuracy-qnli-tiny ${PROJECT_NAME})
+
+add_executable(
+    accuracy-qnli-large
+    accuracy/qnli/large/main.cpp
+)
+
+target_link_libraries(accuracy-qnli-large ${PROJECT_NAME})
