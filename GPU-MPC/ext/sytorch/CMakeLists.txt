@@ -491,3 +491,10 @@ add_executable(
 )
 
 target_link_libraries(accuracy-qnli-large ${PROJECT_NAME})
+
+add_executable(
+    accuracy-mrpc-base
+    accuracy/mrpc/base/main.cpp
+)
+
+target_link_libraries(accuracy-mrpc-base ${PROJECT_NAME})
