@@ -479,6 +479,13 @@ add_executable(
 target_link_libraries(accuracy-sst2-large ${PROJECT_NAME})
 
 add_executable(
+    accuracy-mrpc-large
+    accuracy/mrpc/large/main.cpp
+)
+
+target_link_libraries(accuracy-mrpc-large ${PROJECT_NAME})
+
+add_executable(
     accuracy-qnli-large
     accuracy/qnli/large/main.cpp
 )
