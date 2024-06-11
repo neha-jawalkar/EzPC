@@ -267,7 +267,7 @@ void ct_main(std::string inpName)
     printf("%ld\n", signedAct.data[res.size() - 1]);
 }
 
-void lt_main(std::string inpName, int party)
+void lt_main(std::string inpName, int party, std::string ip)
 {
     sytorch_init();
 
@@ -290,7 +290,7 @@ void lt_main(std::string inpName, int party)
     LlamaVersion *llama = new LlamaVersion();
     LlamaConfig::bitlength = 48;
     LlamaConfig::party = party;
-    llama->init("0.0.0.0", true);
+    llama->init(ip, true);
 
     LlamaNextWordLogits<u64> llama_model(n_layer, n_head, n_embd, n_vocab, intermediate_size);
     u64 n_seq = 128; // get_n_seq(fname, n_embd);
@@ -336,9 +336,12 @@ void lt_main(std::string inpName, int party)
 int main(int __argc, char **__argv)
 {
     int party = atoi(__argv[1]);
+    std::string ip = "127.0.0.1";
+    if (__argc > 2)
+        ip = __argv[2];
     if (party == 0)
         ct_main("999.dat");
     else
-        lt_main("999.dat", party);
+        lt_main("999.dat", party, ip);
     return 0;
 }
