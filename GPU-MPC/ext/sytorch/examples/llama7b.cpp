@@ -227,20 +227,20 @@ void ct_main(std::string inpName)
 {
     sytorch_init();
 
-    // const u64 n_vocab = 32000;
-    // const u64 n_embd = 4096;
-    // const u64 n_head = 32;
-    // const u64 n_layer = 32;
-    // const u64 intermediate_size = 11008;
-    // const u64 scale = 12;
-
     const u64 n_vocab = 32000;
-    const u64 n_ctx = 4096;
-    const u64 n_embd = 5120;
-    const u64 n_head = 40;  // 40;
-    const u64 n_layer = 1; // 40;
-    const u64 intermediate_size = 13824;
+    const u64 n_embd = 4096;
+    const u64 n_head = 32;
+    const u64 n_layer = 32;
+    const u64 intermediate_size = 11008;
     const u64 scale = 12;
+
+    // const u64 n_vocab = 32000;
+    // const u64 n_ctx = 4096;
+    // const u64 n_embd = 5120;
+    // const u64 n_head = 40;  // 40;
+    // const u64 n_layer = 1; // 40;
+    // const u64 intermediate_size = 13824;
+    // const u64 scale = 12;
 
     LlamaNextWordLogits<i64> llama_model(n_layer, n_head, n_embd, n_vocab, intermediate_size);
     std::string fname = std::string("/mnt/nvme/kanav/sigma-accuracy/lambada/llama7b/dataset/") + /*std::to_string(i)*/ inpName;
@@ -272,20 +272,20 @@ void lt_main(std::string inpName, int party, std::string ip)
 {
     sytorch_init();
 
-    // const u64 n_vocab = 32000;
-    // const u64 n_embd = 4096;
-    // const u64 n_head = 32;
-    // const u64 n_layer = 32;//32;
-    // const u64 intermediate_size = 11008;
-    // const u64 scale = 12;
-
     const u64 n_vocab = 32000;
-    const u64 n_ctx = 4096;
-    const u64 n_embd = 5120;
-    const u64 n_head = 40;  // 40;
-    const u64 n_layer = 40; // 40;
-    const u64 intermediate_size = 13824;
+    const u64 n_embd = 4096;
+    const u64 n_head = 32;
+    const u64 n_layer = 32;//32;
+    const u64 intermediate_size = 11008;
     const u64 scale = 12;
+
+    // const u64 n_vocab = 32000;
+    // const u64 n_ctx = 4096;
+    // const u64 n_embd = 5120;
+    // const u64 n_head = 40;  // 40;
+    // const u64 n_layer = 40; // 40;
+    // const u64 intermediate_size = 13824;
+    // const u64 scale = 12;
 
     using LlamaVersion = LlamaTransformer<u64>;
     LlamaVersion *llama = new LlamaVersion();
