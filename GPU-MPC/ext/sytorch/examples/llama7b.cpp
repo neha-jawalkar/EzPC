@@ -252,10 +252,10 @@ void ct_main(std::string inpName)
     llama_model.setBackend(ct);
 
     // llama_model.load("meta_llama2_7b.dat");
-    llama_model.load("meta_llama2_13b.dat");
+    llama_model.load("/mnt/nvme/kanav/sigma-accuracy/lambada/llama7b/weights.dat");
 
     // std::string fname = std::string("lambada-meta-llama2-7b/") + /*std::to_string(i)*/ +"999.dat";
-    std::string fname = std::string("lambada-meta-llama2-13b/") + /*std::to_string(i)*/ inpName;
+    std::string fname = std::string("/mnt/nvme/kanav/sigma-accuracy/lambada/llama7b/dataset/") + /*std::to_string(i)*/ inpName;
     input.load(fname, scale);
     auto &res = llama_model.forward(input);
     auto signedAct = Tensor<i64>((i64 *)res.data, res.shape);
@@ -304,8 +304,8 @@ void lt_main(std::string inpName, int party)
     if (party != DEALER)
     {
         // llama_model.load("meta_llama2_7b.dat");
-        llama_model.load("meta_llama2_13b.dat");
-        std::string fname = std::string("lambada-meta-llama2-13b/") + /*std::to_string(i)*/ inpName;
+        llama_model.load("/mnt/nvme/kanav/sigma-accuracy/lambada/llama7b/weights.dat");
+        std::string fname = std::string("/mnt/nvme/kanav/sigma-accuracy/lambada/llama7b/dataset/") + /*std::to_string(i)*/ inpName;
         input.load(fname, scale);
     }
 
