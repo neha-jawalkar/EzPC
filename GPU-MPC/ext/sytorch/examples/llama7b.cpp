@@ -243,7 +243,7 @@ void ct_main(std::string inpName)
     const u64 scale = 12;
 
     LlamaNextWordLogits<i64> llama_model(n_layer, n_head, n_embd, n_vocab, intermediate_size);
-    u64 n_seq = get_n_seq(fname, n_embd); // get_n_seq(fname, n_embd);
+    u64 n_seq = get_n_seq(inpName, n_embd); // get_n_seq(fname, n_embd);
     std::cout << n_seq << std::endl;
     Tensor<i64> input({n_seq, n_embd});
     llama_model.init(scale, input);
@@ -294,7 +294,7 @@ void lt_main(std::string inpName, int party, std::string ip)
     llama->init(ip, true);
 
     LlamaNextWordLogits<u64> llama_model(n_layer, n_head, n_embd, n_vocab, intermediate_size);
-    u64 n_seq = 128; // get_n_seq(fname, n_embd);
+    u64 n_seq = get_n_seq(inpName, n_embd);
     Tensor<u64> input({n_seq, n_embd});
     input.zero();
     llama_model.init(scale, input);
