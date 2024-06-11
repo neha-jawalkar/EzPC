@@ -301,6 +301,7 @@ void lt_main(std::string inpName, int party, std::string ip)
     llama_model.optimize();
     llama_model.zero();
 
+    std::cout << "tag 1" << std::endl;
     if (party != DEALER)
     {
         // llama_model.load("meta_llama2_7b.dat");
@@ -309,13 +310,18 @@ void lt_main(std::string inpName, int party, std::string ip)
         input.load(fname, scale);
     }
 
+    std::cout << "tag 2" << std::endl;
     // std::string fname = std::string("lambada-meta-llama2-7b/") + /*std::to_string(i)*/ +"999.dat";
     llama->initializeInferencePartyA(llama_model.root);
     llama->initializeInferencePartyB(input);
+    std::cout << "tag 3" << std::endl;
 
     llama::start();
+    std::cout << "tag 4" << std::endl;
     auto &res = llama_model.forward(input);
+    std::cout << "tag 5" << std::endl;
     llama::end();
+    std::cout << "tag 6" << std::endl;
 
     auto &output = llama_model.activation;
     llama->outputA(output);
