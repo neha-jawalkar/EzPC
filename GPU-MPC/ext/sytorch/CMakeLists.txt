@@ -407,6 +407,13 @@ add_executable(
 target_link_libraries(benchmark-gptneo ${PROJECT_NAME})
 
 add_executable(
+    benchmark-gptneo-large
+    benchmarks/gptneo-large.cpp
+)
+
+target_link_libraries(benchmark-gptneo-large ${PROJECT_NAME})
+
+add_executable(
     benchmark-llama-7b
     benchmarks/llama-7b.cpp
 )

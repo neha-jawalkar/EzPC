@@ -9,6 +9,7 @@ benchmarks = [
     'bert-large', # very large key
     'gpt2',
     'gptneo', # very large key
+    'gptneo-large', # very large key
     "llama-7b", # very large key
     "llama-13b", # very large key
 ]
