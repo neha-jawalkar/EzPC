@@ -3,10 +3,12 @@
 **Reference Papers:**  
 
 [SIGMA: Secure GPT Inference with Function Secret Sharing](https://eprint.iacr.org/2023/1269)  
-Kanav Gupta, Neha Jawalkar,  Ananta Mukherjee, Nishanth Chandran, Divya Gupta, Ashish Panwar, Rahul Sharma
+Kanav Gupta, Neha Jawalkar,  Ananta Mukherjee, Nishanth Chandran, Divya Gupta, Ashish Panwar, Rahul Sharma  
+*PoPETS 2024*
 
 [Orca: FSS-based Secure Training with GPUs](https://eprint.iacr.org/2023/206)  
-Neha Jawalkar, Kanav Gupta, Arkaprava Basu, Nishanth Chandran, Divya Gupta, Rahul Sharma
+Neha Jawalkar, Kanav Gupta, Arkaprava Basu, Nishanth Chandran, Divya Gupta, Rahul Sharma  
+*IEEE S&P 2024*
 
 [Secure Floating-Point Training](https://eprint.iacr.org/2023/467)  
 Deevashwer Rathee, Anwesh Bhattacharya, Divya Gupta, Rahul Sharma, Dawn Song  
@@ -44,7 +46,8 @@ This repository has the following components:
 - **Porthos** (part of **CrypTFlow**): a semi-honest 3 party computation protocol which is geared towards TensorFlow-like applications.
 - **Aramis** (part of **CrypTFlow**): a novel technique that uses hardware with integrity guarantees to convert any semi-honest MPC protocol into an MPC protocol that provides malicious security.
 - **SCI** (part of **CrypTFlow2**, **SIRNN**, **SecFloat**, and **Beacon**): a semi-honest 2-party computation library for secure (fixed-point) inference on deep neural networks and secure floating-point computation.
-
+- **GPU-MPC** (part of **Orca** and **Sigma**): GPU-accelerated FSS protocols
+  
 Each one of the above is independent and usable in their own right and more information can be found in the readme of each of the components. But together these combine to make **CrypTFlow** a powerful system for end-to-end secure inference of deep neural networks written in TensorFlow.
 
 With these components in place, we are able to run for the first time secure inference on the [ImageNet dataset]([http://www.image-net.org) with the pre-trained models of the following deep neural nets: ResNet-50, DenseNet-121 and SqueezeNet for ImageNet. For an end-to-end tutorial on running models with CrypTFlow please refer to this [blog post](https://pratik-bhatu.medium.com/privacy-preserving-machine-learning-for-healthcare-using-cryptflow-cc6c379fbab7).
